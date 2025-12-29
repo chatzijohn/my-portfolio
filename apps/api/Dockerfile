@@ -19,9 +19,8 @@ FROM alpine:latest
 WORKDIR /app
 
 # Copy binary and default preferences
-COPY --from=builder /app/amr-bridge .
-COPY preferences.yaml .
+COPY --from=builder /app/api .
 
-EXPOSE 8080
+EXPOSE 8000
 
-CMD ["./amr-bridge"]
+CMD ["./api"]
